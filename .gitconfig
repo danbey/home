@@ -1,0 +1,72 @@
+[user]
+	name = Sasha Kotchubievski
+	email = sashakot@mellanox.com
+
+[alias]
+	st = status
+	co = checkout
+	ci = commit
+
+	diff = diff --no-ext-diff
+	df = diff --name-status
+	list = show --name-status
+	
+	vimdiff = difftool --tool=vimdiff -y
+	winmerge = difftool --tool=winmerge -y
+	wm = difftool --tool=winmerge -y
+	gvimdiff = difftool --tool=gvimdiff -y
+	p4diff = difftool --tool=p4merge -y
+	p4 = difftool --tool=p4merge -y
+	kdiff3 = difftool --tool=kdiff3 -y
+	windiff = difftool --tool=winmerge -y
+	kompare = difftool --tool=kompare -y
+	
+	graph = log --graph --pretty=format:'%C(yellow)%h%Creset%C(yellow bold)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	#g = log --graph --pretty=format:'%C(yellow)%h%Creset%C(yellow bold)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --all
+	
+
+[color]
+	ui = auto
+	branch = auto
+	diff = auto
+	interactive = auto
+	status = auto
+
+[diff]
+	tool = p4merge
+
+[merge]
+	tool = p4merge
+
+[mergetool "kdiff3"]
+	cmd = kdiff3.sh $LOCAL $REMOTE
+	keepTemporaries = false
+	trustExitCode = false
+	keepBackup = false
+
+[mergetool "gvimdiff"]
+	path = c:/ProgramFiles/Vim/vim72/gvim.exe
+
+[mergetool "p4merge"]
+	cmd = p4merge.sh $LOCAL $REMOTE
+	keepTemporaries = false
+	trustExitCode = false
+	keepBackup = false
+
+[mergetool "winmerge"]
+	cmd = \"/c/Program Files (x86)/WinMerge/WinMergeU.exe\" \"$LOCAL\" \"$REMOTE\"
+	keepTemporaries = false
+	trustExitCode = false
+	keepBackup = false
+
+[mergetool "winmerge"]
+	cmd = kompare -c \"$LOCAL\" \"$REMOTE\"
+	keepTemporaries = false
+	trustExitCode = false
+	keepBackup = false
+
+[core]
+	eol = native
+	autocrlf = false
+	filemode = false
+	pager = less -FXRS -x4

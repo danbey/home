@@ -1,0 +1,1 @@
+/labhome/sashakot/src/external/git/contrib/completion/git-completion.bash

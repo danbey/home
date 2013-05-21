@@ -27,6 +27,7 @@
 
 	new = !sh -c 'git graph  $1@{1}..$1@{0} "$@"'
 	forkdiff = !bash -c 'git diff $(git merge-base "$1" "$2") "$2" "${@: 3}" ' -
+	ignore=!([ ! -e .gitignore ] && touch .gitignore) | echo $1 >>.gitignore
 [color]
 	ui = auto
 	branch = auto

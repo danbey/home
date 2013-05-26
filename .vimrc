@@ -137,4 +137,5 @@ let g:clang_complete_copen = 1
 nmap <F7> :TagbarToggle<CR>
 
 " Snipmate
-let g:snips_author = 'Sasha Kotchubievsky'
+let g:snips_author = 'Sasha Kotchubievsky <sashakot@mellanox.com>'
+let g:snippets_dir = "~/.vim/snippets"

@@ -139,3 +139,6 @@ nmap <F7> :TagbarToggle<CR>
 " Snipmate
 let g:snips_author = 'Sasha Kotchubievsky <sashakot@mellanox.com>'
 let g:snippets_dir = "~/.vim/snippets"
+
+" Spelling
+setlocal spell spelllang=en_us

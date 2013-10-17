@@ -142,3 +142,5 @@ let g:snippets_dir = "~/.vim/snippets"
 
 " Spelling
 setlocal spell spelllang=en_us
+hi clear SpellBad
+hi SpellBad cterm=underline,bold

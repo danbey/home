@@ -38,5 +38,5 @@ export IBSIM_SERVER_NAME=localhost
 export IBSIM_SERVER_PORT=55555
 export OSM_CACHE_DIR=/tmp/sasha/opensm 
 export IBUTILS_PATH=/.autodirect/mtrswgwork/sashakot/src/simulator/dist/
-export LD_LIBRARY_PATH=/.autodirect/mtrswgwork/sashakot/src/simulator/dist/lib
+#export LD_LIBRARY_PATH=/.autodirect/mtrswgwork/sashakot/src/simulator/dist/lib
 

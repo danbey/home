@@ -28,6 +28,7 @@
 	new = !sh -c 'git graph  $1@{1}..$1@{0} "$@"'
 	forkdiff = !bash -c 'git diff $(git merge-base "$1" "$2") "$2" "${@: 3}" ' -
 	ignore=!([ ! -e .gitignore ] && touch .gitignore) | echo $1 >>.gitignore
+	rlog = log --show-notes=review
 [color]
 	ui = auto
 	branch = auto
@@ -73,3 +74,20 @@
 	autocrlf = false
 	filemode = false
 	pager = less -FXRS -x4
+[sendemail]
+	smtpserver = labmailer.lab.mtl.com
+	smtpserverport = 25
+	from = Sasha Kotchubievsky <sashakot@dev.mellanox.co.il>
+[imap]
+        folder = "[Gmail]/Drafts"
+        host = imaps://imap.gmail.com
+        user = sashakot@dev.mellanox.co.il
+        port = 993
+	sslverify = false
+
+[format]
+        headers = "Organization: git-ssa\n"
+        numbered = auto
+	#to =hal@dev.mellanox.co.il
+	#cc =ilyan@dev.mellanox.co.il 
+        signoff = true

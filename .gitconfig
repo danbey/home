@@ -78,6 +78,8 @@
 	smtpserver = labmailer.lab.mtl.com
 	smtpserverport = 25
 	from = Sasha Kotchubievsky <sashakot@dev.mellanox.co.il>
+	aliasesfile=~/.mutt_aliases
+	aliasfiletype=mutt
 [imap]
         folder = "[Gmail]/Drafts"
         host = imaps://imap.gmail.com

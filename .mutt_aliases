@@ -1,0 +1,15 @@
+alias linux-rdma linux-rdma@vger.kernel.org
+alias hal Hal Rosenstock <hal@mellanox.com>
+alias hal_dev Hal Rosenstock <hal@dev.mellanox.co.il>
+alias alex Alex Netes <alexne@mellanox.com>
+alias alex_dev Alex Netes <alexne@dev.mellanox.co.il>
+alias vladimir Vladimir Koushnir <vladimirk@mellanox.com>
+alias vladimir_dev Vladimir Koushnir <vladimirk@dev.mellanox.co.il>
+alias daniel Daniel Klein <danielk@mellanox.com>
+alias daniel_dev Daniel Klein <danielk@dev.mellanox.co.il>
+alias sasha Sasha Kotchubievsky <sashakot@mellanox.com>
+alias sasha_dev Sasha Kotchubievsky <sashakot@dev.mellanox.co.il>
+alias dan Dan Ben-Yosef <danby@mellanox.com>
+alias dan_dev Dan Ben-Yosef <danby@dev.mellanox.co.il>
+alias ilya Ilya Nelkenbam <ilyan@mellanox.com>
+alias ilya_dev Ilya Nelkenbaum <ilyan@dev.mellanox.co.il>

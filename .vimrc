@@ -12,8 +12,9 @@ execute pathogen#infect()
 
 
 
-set tabstop=4
-set shiftwidth=4
+set tabstop=8
+set shiftwidth=8
+"set expandtab
 
 " When started as "evim", evim.vim will already have done these settings.
 if v:progname =~? "evim"
@@ -148,3 +149,13 @@ hi SpellBad cterm=underline,bold
 " 
 nnoremap <C-l> :nohlsearch<CR><C-l>
 vnoremap p "_dP
+
+
+
+highlight ExtraWhitespace ctermbg=red guibg=red 
+highlight ExtraLineWidth ctermbg=darkgreen  guibg=darkgreen 
+let w:m1=matchadd('ExtraWhitespace','\s\+$',-1)
+let w:m2=matchadd('ExtraLineWidth','\%>80v.\+',-1)
+au BufRead,BufNewFile,InsertEnter,InsertLeave * let w:m1=matchadd('ExtraWhitespace','\s\+$',-1)
+au BufRead,BufNewFile,InsertEnter,InsertLeave * let w:m1=matchadd('ExtraLineWidth','\%>80v.\+',-1)
+autocmd BufWinLeave * call clearmatches()

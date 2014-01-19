@@ -5,7 +5,7 @@
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
-alias grep='grep --color=auto'
+alias grep='grep --color=auto --exclude-dir="*\.{svn,git}" --exclude="*\tags"'
 alias sgrep='grep -rIn --color=auto --include=\*.{c,cpp,h} --exclude-dir="*\.{svn,git}" --exclude="*\tags"'
 
 # Source global definitions
@@ -34,9 +34,13 @@ source ~/bin/git-completion.sh
 source ~/bin/git-flow-completion.sh
 
 
-export IBSIM_SERVER_NAME=localhost
-export IBSIM_SERVER_PORT=55555
-export OSM_CACHE_DIR=/tmp/sasha/opensm 
-export IBUTILS_PATH=/.autodirect/mtrswgwork/sashakot/src/simulator/dist/
+#export IBSIM_SERVER_NAME=localhost
+#export IBSIM_SERVER_PORT=55555
+#export OSM_CACHE_DIR=/tmp/sasha/opensm 
+#export IBUTILS_PATH=/.autodirect/mtrswgwork/sashakot/src/simulator/dist/
 #export LD_LIBRARY_PATH=/.autodirect/mtrswgwork/sashakot/src/simulator/dist/lib
+
+#autocomplite
+complete -W "$(echo `cat ~/.bash_history | egrep '^ssh ' | sort | uniq | sed 's/^ssh //'`;)" ssh
+complete -W "$(echo `cat ~/.ssh/known_hosts | cut -f 1 -d ' ' | sed -e s/,.*//g | uniq | grep -v "\["`;)" ssh
 

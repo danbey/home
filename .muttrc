@@ -1,0 +1,153 @@
+
+####### gmail
+#set from = "alnet.ofed@gmail.com"
+#set realname = "Alex Netes"
+#set imap_user = "alnet.ofed@gmail.com"
+#set imap_pass = ""
+#set folder = "imaps://imap.gmail.com:993"
+#set spoolfile = "+INBOX"
+#set postponed ="+[Gmail]/Drafts"
+#set trash = "imaps://imap.gmail.com/[Gmail]/Trash"
+#set header_cache =~/.mutt/cache/headers
+#set message_cachedir =~/.mutt/cache/bodies
+#set certificate_file =~/.mutt/certificates
+#set move = no  #Stop asking to "move read messages to mbox"!
+#set imap_keepalive = 900
+
+####### voltaire
+#set folder="imaps://alexne@exil2010.voltaire.com"
+#set spoolfile="imaps://alexne@exil2010.voltaire.com/rdma_kernel"
+set pager_context=1
+set pager_index_lines=6                 	#show a mini-index in pager
+set menu_scroll
+set pgp_verify_sig=no                   	#dont show pgp in pager
+set status_on_top                       	#put status line at top
+
+#sort by thread and date in reverse orde
+set sort=threads
+set sort_browser=date
+set sort_aux=reverse-last-date-received
+
+
+set status_format=" %r %b %f %n      Del %d      Msgs %m %l %> (%P)"
+set pager_format="%-10.10i %[!%a %b %d %R]"
+set date_format="!%H:%M %a %d %b     "
+set index_format="%4C %Z %[%b%d] %-15.15F %s"
+set folder_format="%2C %t %8s %d %N %f"
+
+#set sendmail="/usr/bin/nbsmtp -d isp.net -h smtp.isp.net -f yourname@isp.net"
+
+#set from="default-mailaddress"         #set to your from address
+#set realname="myname"
+
+set record="$HOME/MuttMail/sent"        #sent mail is saved here
+set delete=yes                          #delete without prompting
+set include=yes                         #quote msg in reply
+set fast_reply=yes                      #no prompting on reply
+set beep=no                             #no noise
+set markers=no                          #no + on wrapped lines
+set confirmappend=no                    #no prompt for save to =keep
+set to_chars=" +TCF"                    #no L for mail_list
+set charset="iso-8859-2"
+
+set folder = $HOME/MuttMail
+set move=no
+set spoolfile=$HOME/MuttMail/inbox
+set record=$HOME/MuttMail/inbox
+set from="sashakot@dev.mellanox.co.il"
+set realname="Sasha Kotchubievsky"
+set edit_headers
+
+set sendmail="/usr/bin/msmtp"
+set signature="~/.signature"
+
+#Ilya misc definitions
+#set beep_new				#beep for a new email
+
+
+mailboxes =inbox
+mailboxes =duplicates
+
+save-hook .* =keep                      #default mbox to (s)ave mail is =keep
+subscribe gentoo-user gentoo-dev        #subscribed to these lists
+
+bind pager h display-toggle-weed        #toggle headers with h key
+
+# simulate the old url menu
+macro index \cb |urlview\n 'call urlview to extract URLs out of a message'
+macro pager \cb |urlview\n 'call urlview to extract URLs out of a message'
+
+#run fetchmail by hitting key of G
+macro index G "!fetchmail -k -m 'procmail -d %T'\r"
+macro pager G "!fetchmail -k -m 'procmail -d %T'\r"
+
+#use to edit .muttrc and then source it...no restart necessary
+macro generic ,sm ":source $HOME/.muttrc\r"
+#macro generic \cj "!rxvt -bg wheat -e joe $HOME/.muttrc\r"
+
+# default list of header fields to weed out when displaying mail
+#ignore them all and then unignore what you want to see
+ignore *
+unignore  Date To From: Subject X-Mailer Organization User-Agent
+hdr_order Date From To Subject X-Mailer User-Agent Organization
+
+##your Mutt has to have some colors
+##these are for four levels of quoted text
+##they override the system settings in /etc/mutt/Muttrc
+
+#color quoted green  default
+color quoted1 magenta blue
+#color quoted2 yellow default
+#color quoted3 red default
+#color signature cyan cyan
+
+set editor='vim + -c "set textwidth=78" -c "set wrap" -c "set nocp" -c "?^$"'
+#this color setup is copied from /etc/mutt/Muttrc.color
+#comment it out if you want the default colors in /etc/mutt/Muttrc
+# Je vois la vie en rose :-)
+color   hdrdefault      brightcyan      blue
+color   header          brightwhite     blue "^from:"
+color   header          brightwhite     blue   "^subject:"
+
+color   quoted          brightgreen     blue
+color   signature       brightwhite     blue
+
+color   indicator       blue            green
+
+color   error           red             black
+mono    error           bold
+color   status          black cyan
+mono    status          bold
+color   tree            yellow          blue
+
+color   tilde           brightmagenta   blue
+color   body            brightwhite     blue    "[-a-z_0-9.]+@[-a-z_0-9.]+"
+mono    body            bold                    "[-a-z_0-9.]+@[-a-z_0-9.]+"
+color   body            brightyellow    black   "^Good signature"
+mono    body            bold                    "^Good signature"
+color   body            brightwhite     red     "^Bad signature from.*"
+mono    body            bold                    "^Bad signature from.*"
+color   normal          white           blue
+color   message         green           black
+color   attachment      brightgreen     blue
+
+folder-hook . push "<delete-pattern>~=<enter>"
+folder-hook . 'set record="^"'
+folder-hook . push "<delete-pattern>~=<enter>$"
+
+# End of file...but it can go on and on and on....:)
+alias linux-rdma linux-rdma@vger.kernel.org
+alias hal Hal Rosenstock <hal@mellanox.com>
+alias hal_dev Hal Rosenstock <hal@dev.mellanox.co.il>
+alias alex Alex Netes <alexne@mellanox.com>
+alias alex_dev Alex Netes <alexne@dev.mellanox.co.il>
+alias vladimir Vladimir Koushnir <vladimirk@mellanox.com>
+alias vladimir_dev Vladimir Koushnir <vladimirk@dev.mellanox.co.il>
+alias daniel Daniel Klein <danielk@mellanox.com>
+alias daniel_dev Daniel Klein <danielk@dev.mellanox.co.il>
+alias sasha Sasha Kotchubievsky <sashakot@mellanox.com>
+alias sasha_dev Sasha Kotchubievsky <sashakot@dev.mellanox.co.il>
+alias dan Dan Ben-Yosef <danby@mellanox.com>
+alias dan_dev Dan Ben-Yosef <danby@dev.mellanox.co.il>
+alias ilya Ilya Nelkenbam <ilyan@mellanox.com>
+alias ilya_dev Ilya Nelkenbaum <ilyan@dev.mellanox.co.il>

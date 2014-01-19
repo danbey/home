@@ -1,0 +1,17 @@
+MAILDIR=$HOME/MuttMail/
+DEFAULT=$HOME/MuttMail/
+LOGFILE=$HOME/procmail.log
+LOGABSTRACT=no
+VERBOSE=no
+FORMAIL=/usr/bin/formail
+
+:0 Whc: .msgid.lock
+| $FORMAIL -D 65536 .msgid.cache
+
+:0 a
+duplicates/
+
+
+:0
+* .*
+inbox/

@@ -80,6 +80,7 @@
 	from = Sasha Kotchubievsky <sashakot@dev.mellanox.co.il>
 	aliasesfile=~/.mutt_aliases
 	aliasfiletype=mutt
+	multiedit = false
 [imap]
         folder = "[Gmail]/Drafts"
         host = imaps://imap.gmail.com
@@ -88,7 +89,7 @@
 	sslverify = false
 
 [format]
-        headers = "Organization: git-ssa\n"
+        headers = "Organization: Mellanox\n"
         numbered = auto
 	#to =hal@dev.mellanox.co.il
 	#cc =ilyan@dev.mellanox.co.il 

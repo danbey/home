@@ -74,6 +74,7 @@
 	autocrlf = false
 	filemode = false
 	pager = less -FXRS -x4
+	whitespace = trailing-space,space-before-tab,indent-with-non-tab
 [sendemail]
 	smtpserver = labmailer.lab.mtl.com
 	smtpserverport = 25
@@ -94,3 +95,5 @@
 	#to =hal@dev.mellanox.co.il
 	#cc =ilyan@dev.mellanox.co.il 
         signoff = true
+[branch]
+	autosetuprebase = always

@@ -6,6 +6,8 @@
 	st = status
 	co = checkout
 	ci = commit
+	githublog = log --pretty="https://github.com/hnrose/ibssa2/commit/%H"
+	fixRM = log --date=short  --pretty='Commit: %H%nSubject: %s%nThe author: %an%nDate: %ad%nSee on: https://github.com/hnrose/ibssa2/commit/%H%n'
 
 	diff = diff --no-ext-diff
 	df = diff --name-status
@@ -22,7 +24,6 @@
 	kompare = difftool --tool=kompare -y
 	
 	graph = log --graph --pretty=format:'%C(yellow)%h%Creset%C(yellow bold)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-	#g = log --graph --pretty=format:'%C(yellow)%h%Creset%C(yellow bold)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --all
 	
 
 	new = !sh -c 'git graph  $1@{1}..$1@{0} "$@"'
@@ -75,6 +76,7 @@
 	filemode = false
 	pager = less -FXRS -x4
 	whitespace = trailing-space,space-before-tab,indent-with-non-tab
+	editor = vim
 [sendemail]
 	smtpserver = labmailer.lab.mtl.com
 	smtpserverport = 25
@@ -94,6 +96,11 @@
         numbered = auto
 	#to =hal@dev.mellanox.co.il
 	#cc =ilyan@dev.mellanox.co.il 
+	cc = root <root@dev.mellanox.co.il>
         signoff = true
 [branch]
 	autosetuprebase = always
+[push]
+	default = matching
+[notes]
+	rewriteRef = refs/notes/commits
